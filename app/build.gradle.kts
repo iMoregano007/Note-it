@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    kotlin("kapt") version "2.0.0"
 }
 
 android {
@@ -45,4 +46,18 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+
+//    custom dependencies
+    implementation(libs.androidx.room.runtime)
+    annotationProcessor(libs.androidx.room.compiler)
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.jetbrains.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.coroutines.core)
+
+
+    //       To use Kotlin annotation processing tool (kapt)
+    kapt("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
+
 }
