@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="xxsmall">3dp</dimen>
+    <dimen name="xsmall">5dp</dimen>
+    <dimen name="small">7dp</dimen>
+    <dimen name="medium">10dp</dimen>
+    <dimen name="large">12dp</dimen>
+    <dimen name="xlarge">16dp</dimen>
+    <dimen name="xxlarge">20dp</dimen>
+
+    <dimen name="text_xsmall">12dp</dimen>
+    <dimen name="text_small">14dp</dimen>
+    <dimen name="text_medium">16dp</dimen>
+    <dimen name="text_large">18dp</dimen>
+    <dimen name="text_xlarge">22dp</dimen>
+    
+
+</resources>
