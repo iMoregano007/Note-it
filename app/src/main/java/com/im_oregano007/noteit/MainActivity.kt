@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var notesDB: NotesDB
     lateinit var notesRepository: NotesRepository
     lateinit var mainViewModel: MainViewModel
-    var notesAdapter: NotesAdapter? = null
+    var notesAdapter: NotesAdapter = NotesAdapter(this, emptyList())
 
 
 
@@ -47,12 +47,14 @@ class MainActivity : AppCompatActivity() {
 
         mainViewModel.notesLiveData.observe(this, Observer {
             Log.e("Observer", "onCreate: $it ")
-            if (notesAdapter != null){
-                notesAdapter!!.updatedNotes(it)
-            } else {
-                notesAdapter = NotesAdapter(this,it)
-                setUpRecyclerV()
-            }
+            notesAdapter.updatedNotes(it)
+
+//            if (notesAdapter != null){
+//                notesAdapter!!.updatedNotes(it)
+//            } else {
+//                notesAdapter = NotesAdapter(this,it)
+//                setUpRecyclerV()
+//            }
         })
 
 
