@@ -5,6 +5,9 @@
 
     <data>
 <!--        <variable-->
+<!--            name="viewM"-->
+<!--            type="com.im_oregano007.noteit.MVVM.NotesDetailViewModel" />-->
+<!--        <variable-->
 <!--            name="cNote"-->
 <!--            type="com.im_oregano007.noteit.Notes.Note" />-->
 
@@ -14,7 +17,8 @@
         android:id="@+id/main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".NotesDetail">
+        tools:context=".NotesDetail"
+        android:background="#949494">
 
         <LinearLayout
             android:id="@+id/toolbar"
@@ -44,9 +48,15 @@
                 android:layout_gravity="end"
                 android:layout_weight="1"
                 />
-
-
-
+            <ImageView
+                android:id="@+id/editBtn"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:visibility="gone"
+                android:src="@drawable/edit_icon"
+                android:layout_gravity="end"
+                android:layout_weight="1"
+                />
 
         </LinearLayout>
 
@@ -66,13 +76,12 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Input Title"
+                android:hint="Title"
                 android:layout_margin="@dimen/small">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inputTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text=""
                     android:textSize="@dimen/text_large"
                     android:textStyle="italic"
                     />
@@ -98,13 +107,12 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="Input Description"
+                android:hint="Description"
                 android:layout_margin="@dimen/small">
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/inputValue"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:text=""
                     android:textSize="@dimen/text_medium"
                     android:textStyle="italic"
                     android:gravity="top"
@@ -114,6 +122,17 @@
 
 
         </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="gone"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"

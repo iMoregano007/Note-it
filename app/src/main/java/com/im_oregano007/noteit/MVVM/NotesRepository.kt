@@ -22,7 +22,9 @@ class NotesRepository(val notesDao: NotesDao) {
         notesDao.deleteNote(id)
     }
 
-    fun getNote(id : Int) = notesDao.getNote(id)
+    fun getNote(id : Int) : LiveData<Note> {
+        return notesDao.getNote(id)
+    }
 
 
 }

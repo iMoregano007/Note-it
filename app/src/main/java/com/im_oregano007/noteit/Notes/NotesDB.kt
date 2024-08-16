@@ -5,10 +5,11 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.im_oregano007.noteit.Converters
 
 @Database(entities = [Note::class], version = 1)
 @TypeConverters(Converters::class)
-abstract class NotesDB : RoomDatabase() {
+public abstract class NotesDB : RoomDatabase() {
 
     abstract fun notesDao() : NotesDao
 
@@ -23,7 +24,8 @@ abstract class NotesDB : RoomDatabase() {
                 synchronized(this){
                     INSTANCE = Room.databaseBuilder(context.applicationContext,
                         NotesDB::class.java,
-                        "notes_db").build()
+                        "notes_db")
+                        .build()
                 }
 
             }

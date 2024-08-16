@@ -1,4 +1,4 @@
-package com.im_oregano007.noteit.Notes
+package com.im_oregano007.noteit
 
 import androidx.room.TypeConverter
 import java.util.Date

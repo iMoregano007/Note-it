@@ -7,7 +7,7 @@ import androidx.room.Query
 import androidx.room.Update
 
 @Dao
-interface NotesDao {
+public interface NotesDao {
 
     @Insert
     suspend fun insertNote(note: Note)

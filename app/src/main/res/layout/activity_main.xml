@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity"
-        android:background="#DF242424">
+        android:background="#949494">
 
         <LinearLayout
             android:id="@+id/toolbar"

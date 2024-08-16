@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
 
     <data>
+<!--        <variable-->
+<!--            name="n"-->
+<!--            type="com.im_oregano007.noteit.Notes.Note" />-->
 
     </data>
 
@@ -14,13 +18,27 @@
 
         <TextView
             android:id="@+id/titleV"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/xsmall"
+            android:text=""
             android:padding="@dimen/xxsmall"
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/deleteBtn"
             app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/deleteBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/xsmall"
+            android:layout_marginEnd="@dimen/xsmall"
+            android:padding="@dimen/xxsmall"
+            android:src="@drawable/baseline_delete_24"
+            />
+
 
         <com.google.android.material.divider.MaterialDivider
             android:id="@+id/divider"
@@ -35,6 +53,8 @@
             android:id="@+id/valveText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text=""
+            android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/divider"

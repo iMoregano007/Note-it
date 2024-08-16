@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.im_oregano007.noteit.MVVM.MainViewModel
 import com.im_oregano007.noteit.MVVM.MainViewModelFactory
 import com.im_oregano007.noteit.MVVM.NotesRepository
+import com.im_oregano007.noteit.Notes.Note
 import com.im_oregano007.noteit.Notes.NotesDB
 import com.im_oregano007.noteit.databinding.ActivityMainBinding
 
@@ -45,7 +46,7 @@ class MainActivity : AppCompatActivity() {
         mainViewModel = ViewModelProvider(this,MainViewModelFactory(notesRepository))[MainViewModel::class.java]
 
 
-        mainViewModel.notesLiveData.observe(this, Observer {
+        mainViewModel.notesLiveData.observe(this@MainActivity, Observer {
             Log.e("Observer", "onCreate: $it ")
             notesAdapter.updatedNotes(it)
 
@@ -70,6 +71,10 @@ class MainActivity : AppCompatActivity() {
         layoutManager = StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL)
         adapter = notesAdapter
         setHasFixedSize(true)
+    }
+
+    fun deleteNote(note: Note){
+        mainViewModel.deleteNote(note)
     }
 
 

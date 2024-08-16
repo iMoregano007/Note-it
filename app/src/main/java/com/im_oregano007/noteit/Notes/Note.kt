@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 import java.util.Date
 
 @Entity(tableName = "notes")
-data class Note(
+public data class Note(
     @PrimaryKey(autoGenerate = true)
     val id : Int,
     var title : String,
